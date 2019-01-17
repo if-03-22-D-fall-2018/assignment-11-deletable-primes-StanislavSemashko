@@ -14,11 +14,11 @@
  #include <math.h>
 
 
- int remove_digit(int i, int num)
+ unsigned long remove_digit(int i, unsigned long num)
  {
-   int left_site = 0 ;
-   double right_site = 0;
-   int total = 0;
+   unsigned long left_site = 0 ;
+   unsigned long  right_site = 0;
+   unsigned long total = 0;
 
    if (i == 0)
    {
@@ -26,13 +26,13 @@
    }
 
    left_site = num / pow(10 , i + 1);
-   right_site = num % (long)pow(10 , i);
+   right_site = num % (unsigned long)pow(10 , i);
    total = left_site * pow(10 , i) + right_site;
 
    return total;
  }
 
- int get_ways(int num)
+ int get_ways(unsigned long num)
  {
    int len = 0;
    for (int i = 0; i < get_length(num); i++)
@@ -54,10 +54,10 @@
    return len;
  }
 
- int get_length(int num)
+ int get_length(unsigned long num)
 {
-  int clone = num;
-  int len = 0;
+  unsigned long  clone = num;
+  unsigned long  len = 0;
   if (num < 10)
   {
     return 1;
@@ -70,13 +70,13 @@
   return len;
 }
 
-bool is_prime(int num)
+bool is_prime(unsigned long num)
 {
-  int i = 2;
-  int cloned_num = num;
+  unsigned long  i = 2;
+  unsigned long  cloned_num = num;
   while (i <= sqrt(num))
   {
-    if (cloned_num %(int)i == 0)
+    if (cloned_num % i == 0)
     {
       return false;
     }

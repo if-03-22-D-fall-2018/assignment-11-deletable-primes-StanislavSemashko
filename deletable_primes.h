@@ -13,12 +13,12 @@
 #ifndef ___DELETABLE_PRIMES
 #define ___DELETABLE_PRIMES
 
-int remove_digit(int i, int num);
+unsigned long remove_digit(int i, unsigned long num);
 
-int get_ways(int num);
+int get_ways(unsigned long num);
 
-int get_length(int num);
+int get_length(unsigned long num);
 
-bool is_prime(int num);
+bool is_prime(unsigned long num);
 
 #endif
