@@ -75,10 +75,6 @@ bool is_prime(unsigned long num)
   {
     return false;
   }
-  else if(num == 2)
-  {
-    return true;
-  }
   unsigned long  i = 2;
   unsigned long  cloned_num = num;
   while (i <= sqrt(num))
