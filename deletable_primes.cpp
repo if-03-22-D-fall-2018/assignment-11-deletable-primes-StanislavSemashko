@@ -35,14 +35,17 @@
  int get_ways(int num)
  {
    int len = 0;
-
    for (int i = 0; i < get_length(num); i++)
    {
-     if (get_length(num) == 1 && is_prime(num) == true)
+     if (get_length(num) == 1)
      {
-       return 1;
+       if (is_prime(num) == true)
+       {
+         return 1;
+       }
+       return 0;
      }
-     if (get_length(num) != 1 && is_prime(remove_digit(i,num)) )
+     else if (is_prime(remove_digit(i,num)) )
      {
        len += get_ways(remove_digit(i,num));
       }
