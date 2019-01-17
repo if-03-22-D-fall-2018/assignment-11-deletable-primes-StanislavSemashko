@@ -37,18 +37,14 @@
    int new_num = num;
    int len = 0;
 
-   for (int i = 0; i < get_length(new_num); i++)
+   for (int i = 0; i < get_length(num); i++)
    {
      if (get_length(new_num) == 1)
      {
        if (is_prime(new_num) == true)
        {
-          len ++;
+          len += 1;
        }
-       // else
-       // {
-       //   return 0;
-       // }
      }
      if (get_length(new_num) != 1 && is_prime(remove_digit(i,new_num)) )
      {
@@ -56,7 +52,7 @@
        len = get_ways(new_num);
       }
 
-     }
+    }
    return len;
  }
 
