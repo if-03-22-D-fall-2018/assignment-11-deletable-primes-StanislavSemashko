@@ -35,6 +35,7 @@
  int get_ways(int num)
  {
    int new_num = num;
+   int len = 0;
 
    for (int i = 0; i < get_length(new_num); i++)
    {
@@ -42,20 +43,21 @@
      {
        if (is_prime(new_num) == true)
        {
-          return 1;
+          len ++;
        }
-       else
-       {
-         return 0;
-       }
+       // else
+       // {
+       //   return 0;
+       // }
      }
-     if (is_prime(remove_digit(i,new_num)) )
+     if (get_length(new_num) != 1 && is_prime(remove_digit(i,new_num)) )
      {
-       get_ways(new_num);
+       new_num = remove_digit(i,new_num);
+       len = get_ways(new_num);
       }
 
      }
-   return 0;
+   return len;
  }
 
  int get_length(int num)
@@ -68,7 +70,7 @@
   }
   while (clone != 0)
   {
-    clone -= clone/10;
+    clone = clone/10;
     len++;
   }
   return len;
