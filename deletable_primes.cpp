@@ -24,7 +24,6 @@
    {
      return num / 10;
    }
-
    left_site = num / pow(10 , i + 1);
    right_site = num % (unsigned long)pow(10 , i);
    total = left_site * pow(10 , i) + right_site;
@@ -48,7 +47,7 @@
      else if (is_prime(remove_digit(i,num)) )
      {
        len += get_ways(remove_digit(i,num));
-      }
+     }
 
     }
    return len;
@@ -72,6 +71,14 @@
 
 bool is_prime(unsigned long num)
 {
+  if (num == 1)
+  {
+    return false;
+  }
+  else if(num == 2)
+  {
+    return true;
+  }
   unsigned long  i = 2;
   unsigned long  cloned_num = num;
   while (i <= sqrt(num))
