@@ -26,7 +26,7 @@
    }
 
    left_site = num / pow(10 , i + 1);
-   right_site = num % (int)pow(10 , i);
+   right_site = num % (long)pow(10 , i);
    total = left_site * pow(10 , i) + right_site;
 
    return total;
@@ -34,20 +34,17 @@
 
  int get_ways(int num)
  {
-   int new_num = num;
    int len = 0;
 
    for (int i = 0; i < get_length(num); i++)
    {
-
-     if (get_length(new_num) != 1 && is_prime(remove_digit(i,new_num)) )
+     if (get_length(num) == 1 && is_prime(num) == true)
      {
-       // new_num = remove_digit(i,new_num);
-       len += get_ways(remove_digit(i,new_num));
-      }
-      if (get_length(num) == 1 && is_prime(new_num) == true)
-      {
-        len ++;
+       return 1;
+     }
+     if (get_length(num) != 1 && is_prime(remove_digit(i,num)) )
+     {
+       len += get_ways(remove_digit(i,num));
       }
 
     }
