@@ -39,17 +39,15 @@
 
    for (int i = 0; i < get_length(num); i++)
    {
-     if (get_length(new_num) == 1)
-     {
-       if (is_prime(new_num) == true)
-       {
-          len += 1;
-       }
-     }
+
      if (get_length(new_num) != 1 && is_prime(remove_digit(i,new_num)) )
      {
-       new_num = remove_digit(i,new_num);
-       len = get_ways(new_num);
+       // new_num = remove_digit(i,new_num);
+       len += get_ways(remove_digit(i,new_num));
+      }
+      if (get_length(num) == 1 && is_prime(new_num) == true)
+      {
+        len ++;
       }
 
     }
